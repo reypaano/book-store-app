@@ -9,9 +9,15 @@
       <input type="email" name="email" v-model="form.email" />
       <label for="password">Password:</label>
       <input type="password" name="password" v-model="form.password" />
-      <button type="submit">Submit</button>
+      <!-- <button type="submit">Submit</button> -->
+      <button type="submit" :disabled="loading">
+        {{ loading ? "Submitting..." : "Submit" }}
+      </button>
+      <div v-if="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+      </div>
     </form>
-    <p v-if="showError" id="error">Username already exists</p>
+    <p v-if="showError" id="error">Something went wrong. Check inputs.</p>
   </div>
 </template>
 
@@ -28,6 +34,7 @@ export default {
         email: "",
         password: "",
       },
+      loading: false,
       showError: false,
     };
   },
@@ -35,12 +42,15 @@ export default {
     ...mapActions(["register"]),
     async submit() {
       try {
-        console.log(this.form);
+        this.loading = true;
         await this.register(this.form);
         this.$router.push("/login");
         this.showError = false;
       } catch (error) {
+        // error = error;
         this.showError = true;
+      } finally {
+        this.loading = false;
       }
     },
   },
@@ -115,5 +125,36 @@ input {
 }
 #error {
   color: red;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the overlay is above other elements */
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

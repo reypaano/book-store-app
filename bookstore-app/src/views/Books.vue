@@ -30,6 +30,9 @@
       </div>
       <button class="addBtn" @click="addBook">Add Book</button>
     </div>
+    <div v-if="loading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
   </div>
 </template>
 
@@ -42,11 +45,18 @@ export default {
   components: {
     AddBook,
   },
+  data() {
+    return {
+      loading: false,
+    };
+  },
   methods: {
     ...mapActions(["deleteBook"]),
     async deleteBook(bookID) {
       try {
+        this.loading = true;
         await this.$store.dispatch("deleteBook", bookID);
+        this.loading = false;
       } catch (error) {
         this.showError = true;
       }
@@ -74,6 +84,7 @@ export default {
   mounted() {
     // Fetch books when the component is mounted
     this.$store.dispatch("fetchBooks");
+    this.loading = false;
   },
 };
 </script>
@@ -144,5 +155,36 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the overlay is above other elements */
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

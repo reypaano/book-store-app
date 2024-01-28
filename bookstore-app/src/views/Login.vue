@@ -8,6 +8,9 @@
       <label for="password">Password:</label>
       <input type="password" v-model="password" required />
       <button type="submit">Login</button>
+      <div v-if="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+      </div>
     </form>
   </div>
 </template>
@@ -21,17 +24,21 @@ export default {
     return {
       email: "",
       password: "",
+      loading: false,
     };
   },
   methods: {
     ...mapActions(["setToken"]),
     async login() {
       try {
+        this.loading = true;
         await this.setToken({ email: this.email, password: this.password });
         // Redirect to the posts route
         this.$router.push("/posts");
       } catch (error) {
         console.error("Login failed:", error);
+      } finally {
+        this.loading = false;
       }
     },
   },
@@ -111,5 +118,36 @@ input {
 
 #error {
   color: red;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the overlay is above other elements */
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
