@@ -26,6 +26,9 @@ git clone https://github.com/reypaano/book-store-app.git
 ## **For running Bookstore API (Laravel)**
 
 ### 1. Go the the bookstore-api directory
+```
+cd book-store-app
+```
 
 ```
 cd bookstore-api
