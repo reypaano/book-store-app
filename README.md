@@ -36,7 +36,7 @@ cd bookstore-api
 
 ### 2. Open XAMPP and start Apache server and MySQL server
 
-### 3. Once inside bookstore-api, run
+### 3. Once inside bookstore-api, in this step I highly recommend to use GIT bash to run
 
 ```
 composer install
