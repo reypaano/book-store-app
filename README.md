@@ -79,3 +79,5 @@ npm start
 ## Notes:
 
 ### - Adjust ENV Files as needed I included them already in the push for easier access
+
+### - Wasn't able to find a free json endpoint specifically for books so I just made a simple schema with title, author, and price fields
