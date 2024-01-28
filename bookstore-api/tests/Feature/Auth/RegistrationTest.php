@@ -16,9 +16,9 @@ class RegistrationTest extends TestCase
 {
     // Create a sample user data for registration
     $userData = [
-        'name' => 'John Doe',
-        'email' => 'john.doe@example.com',
-        'password' => 'password123',
+        'name' => 'Juan Dela Cruz',
+        'email' => 'juan.cruz@example.com',
+        'password' => 'password123'
         // 'password_confirmation' => 'password123',
     ];
 
@@ -35,8 +35,8 @@ class RegistrationTest extends TestCase
 
     // Assert that the user is in the database
     $this->assertDatabaseHas('users', [
-        'name' => 'John Doe',
-        'email' => 'john.doe@example.com',
+        'name' => 'Juan Dela Cruz',
+        'email' => 'juan.cruz@example.com',
     ]);
 
     // Assert that the user password is hashed in the database
