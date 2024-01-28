@@ -36,7 +36,7 @@ cd bookstore-api
 
 ### 2. Open XAMPP and start Apache server and MySQL server
 
-### 3. Open phpMyAdmin (can click Admin button in Xampp CPanel) and create a database called "laravel" or if the command line is giving option to create it just choose yes 
+### 3. Open phpMyAdmin (can click Admin button in Xampp CPanel) and create a database called "laravel" or if the command line is giving option to create it (step 5) just choose yes 
 
 ### 4. Once inside bookstore-api, run
 
