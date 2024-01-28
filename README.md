@@ -27,7 +27,7 @@ git clone https://github.com/reypaano/book-store-app.gitt
 ### 1. Go the the bookstore-api directory
 
 ```
-cd cd bookstore-api
+cd bookstore-api
 ```
 
 ### 2. Open XAMPP and start Apache server and MySQL server
@@ -75,3 +75,7 @@ npm start
 ```
 
 ### 5. Open the url provided in the desired browser
+
+## Notes:
+
+### - Adjust ENV Files as needed I included them already in the push for easier access
