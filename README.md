@@ -9,6 +9,7 @@ This is an app is made using PHP - Laravel 5.3.0 and VueJs 3.7.16.
 - [Download XAMPP](https://www.apachefriends.org/download.html)
 - [Download Composer](https://getcomposer.org/download/)
 - [Download Node](https://nodejs.org/en/download)
+- [Download Postman API](https://www.postman.com/downloads/)
 
 Install latest NPM
 
@@ -19,7 +20,7 @@ npm install -g npm
 - Project Repo:
 
 ```
-git clone https://github.com/reypaano/book-store-app.gitt
+git clone https://github.com/reypaano/book-store-app.git
 ```
 
 ## **For running Bookstore API (Laravel)**
@@ -32,7 +33,7 @@ cd bookstore-api
 
 ### 2. Open XAMPP and start Apache server and MySQL server
 
-### 3. Open phpMyAdmin (can click Admin button in Xampp CPanel) and create a database called "laravel"
+### 3. Open phpMyAdmin (can click Admin button in Xampp CPanel) and create a database called "laravel" or if the command line is giving option to create it just choose yes 
 
 ### 4. Once inside bookstore-api, run
 
