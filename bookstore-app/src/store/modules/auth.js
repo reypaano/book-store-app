@@ -20,7 +20,7 @@ const actions = {
 
   async LogIn({ commit }, User) {
     await axios.post("login", User);
-    await commit("setUser", User.get("username"));
+    await commit("setUser", User.get("name"));
   },
 
   async CreateBook({ dispatch }, book) {
@@ -39,8 +39,8 @@ const actions = {
   },
 };
 const mutations = {
-  setUser(state, username) {
-    state.user = username;
+  setUser(state, name) {
+    state.user = name;
   },
   setPosts(state, posts) {
     state.posts = posts;
