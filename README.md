@@ -32,25 +32,27 @@ cd bookstore-api
 
 ### 2. Open XAMPP and start Apache server and MySQL server
 
-### 3. Once inside bookstore-api, run
+### 3. Open phpMyAdmin (can click Admin button in Xampp CPanel) and create a database called "laravel"
+
+### 4. Once inside bookstore-api, run
 
 ```
 composer install
 ```
 
-### 4. run
+### 5. run
 
 ```
 php artisan migrate
 ```
 
-### 5. When the installation finished, run
+### 6. When the installation finished, run
 
 ```
 php artisan serve
 ```
 
-### 6. open the url provided in the desired browser or in Postman API (env and collection is also provided in the root folder)
+### 7. open the url provided in the desired browser or in Postman API (env and collection is also provided in the root folder)
 
 ## **For running Bookstore APP (VUE)**
 
