@@ -18,8 +18,8 @@ class LoginRegisterController extends BaseController
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|max:250',
             'email' => 'required|string|email:rfc,dns|max:250|unique:users,email',
-            'password' => 'required|string|min:8|confirmed',
-            'password_confirmation' => 'required|same:password',
+            'password' => 'required|string|min:8',
+            // 'password_confirmation' => 'required|same:password',
         ]);
 
         if($validate->fails()){
