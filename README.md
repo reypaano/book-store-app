@@ -19,7 +19,7 @@ npm install -g npm
 - Project Repo:
 
 ```
-git clone https://github.com/ThusharaX/Online-Library-CRUD.git
+git clone https://github.com/reypaano/book-store-app.gitt
 ```
 
 ## **For running Bookstore API (Laravel)**
