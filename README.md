@@ -10,7 +10,11 @@ This is an app is made using PHP - Laravel 5.3.0 and VueJs 3.7.16.
 - [Download Composer](https://getcomposer.org/download/)
 - [Download Node](https://nodejs.org/en/download)
 
-Install latest NPM **_npm install -g npm_**
+Install latest NPM
+
+```
+npm install -g npm
+```
 
 - Project Repo:
 
